@@ -26,4 +26,3 @@ export class UnauthorizedError extends CustomError {
     super(HttpStatus.UNAUTHORIZED, message);
   }
 }
-

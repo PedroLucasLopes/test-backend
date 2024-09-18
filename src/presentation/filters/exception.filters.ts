@@ -39,7 +39,7 @@ export class CustomExceptionFilter implements ExceptionFilter {
 
       const d = exception?.stack?.split('at ');
       const e = d[0].split(filename[1]);
-      errorDetails = e[1]
+      errorDetails = e[1];
     }
 
     const errorResponse = {

@@ -15,13 +15,13 @@ export class SuccessResponse<T> implements IJsonResponse<T> {
 }
 
 export class Ok<T> extends SuccessResponse<T> {
-    constructor(data: T, message?: string) {
-      super(HttpStatus.OK, data, message || "Ok");
-    }
+  constructor(data: T, message?: string) {
+    super(HttpStatus.OK, data, message || 'Ok');
   }
-  
-  export class Created<T> extends SuccessResponse<T> {
-    constructor(data: T, message?: string) {
-      super(HttpStatus.CREATED, data, message || "Created");
-    }
+}
+
+export class Created<T> extends SuccessResponse<T> {
+  constructor(data: T, message?: string) {
+    super(HttpStatus.CREATED, data, message || 'Created');
   }
+}

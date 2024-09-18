@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Campaign" ALTER COLUMN "signUpDate" SET DEFAULT CURRENT_TIMESTAMP;

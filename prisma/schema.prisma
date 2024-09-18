@@ -23,7 +23,7 @@ enum StatusType {
 model Campaign {
   id         String       @id @default(uuid())
   name       String
-  signUpDate DateTime
+  signUpDate DateTime     @default(now())
   startDate  DateTime
   endDate    DateTime
   status     StatusType
