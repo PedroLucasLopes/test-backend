@@ -26,6 +26,6 @@ model Campaign {
   signUpDate DateTime     @default(now())
   startDate  DateTime
   endDate    DateTime
-  status     StatusType
+  status     StatusType?
   category   CampaignType
 }

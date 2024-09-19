@@ -25,7 +25,7 @@ export class CampaignBodyDTO {
   @IsDate()
   endDate: Date;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsEnum(StatusType)
   status: StatusType;
 

@@ -1,4 +1,4 @@
-export function missingFields(fields: { [key: string]: any }): string {
+export default function missingFields(fields: { [key: string]: any }): string {
   const missingFields = Object.entries(fields)
     .filter(([, value]) => !value)
     .map(([key]) => key);
