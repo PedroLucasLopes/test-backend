@@ -6,9 +6,10 @@ import { PrismaModule } from '../../infrastructure/prisma/prisma.module';
 import { AppController } from './app.controller';
 import { CampaignController } from 'src/presentation/controllers/campaign.controller';
 import { CampaignService } from 'src/application/services/campaign.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PrismaModule],
+  imports: [PrismaModule, ConfigModule.forRoot()],
   controllers: [AppController, CampaignController],
   providers: [
     PrismaService,

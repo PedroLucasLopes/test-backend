@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/infrastructure/prisma/prisma.service';
 import { CampaignBodyDTO } from '../DTO/campaign-body-dto';
 import {
+  BadRequestError,
   NotFoundError,
   UnauthorizedError,
 } from 'src/presentation/responses/error.types';
@@ -10,12 +11,14 @@ import validateDateFormat from 'src/presentation/filters/validateDateFormat.filt
 import convertToDate from 'src/presentation/filters/converttodate.filter';
 import checkDateValidation from 'src/presentation/filters/checkdatevalidation.filter';
 import checkCampaignEnd from 'src/presentation/filters/checkcampaignend.filter';
-import { StatusType } from '@prisma/client';
 import campaignStatus from 'src/presentation/filters/campaignstatus.filter';
+import { StatusType } from '@prisma/client';
+import statusTypeIsValid from 'src/presentation/filters/statusTypeIsValid.filter';
 
 @Injectable()
 export class CampaignService {
   constructor(private prismaService: PrismaService) {}
+
   async create({
     name,
     startDate,
@@ -69,9 +72,25 @@ export class CampaignService {
     return { campaign };
   }
 
-  async findAll() {
+  async findAll(status?: StatusType) { 
+    if(status) {
+      return await this.findByCampaignStatus(status)
+    }
     const campaigns = await this.prismaService.campaign.findMany();
     return { campaigns };
+  }
+
+  async findByCampaignStatus(status: StatusType) {
+    const statusType = status.toUpperCase() as StatusType;
+
+    if(statusTypeIsValid(statusType)) {
+      const campaignsByStatus = await this.prismaService.campaign.findMany({
+        where: {status: statusType}
+      })
+      return {campaigns: campaignsByStatus}
+    }
+
+    throw new BadRequestError("This status is not valid!")
   }
 
   async findOne(id: string) {
@@ -95,11 +114,15 @@ export class CampaignService {
   }
 
   async remove(id: string) {
-    await this.findOne(id);
+    const {campaign} = await this.findOne(id);
 
-    const campaign = await this.prismaService.campaign.delete({
+    if(campaign.status === StatusType.PAUSED) {
+      throw new BadRequestError("This campaign is already Paused")
+    }
+    const deleted = await this.prismaService.campaign.update({
+      data: {...campaign, status: StatusType.PAUSED},
       where: { id },
     });
-    return { campaign };
+    return { deleted };
   }
 }

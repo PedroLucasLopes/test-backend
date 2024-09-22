@@ -6,6 +6,6 @@ export class AppController {
   @Public()
   @Get()
   getHello(): string {
-    return 'Hello World';
+    return process.env.NODE_ENV;
   }
 }

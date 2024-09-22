@@ -9,10 +9,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('CRM API')
-    .setDescription('developed by Pedro Lucas')
+    .setTitle('CRUD Campaign')
+    .setDescription('This documentation shows the endpoints and parameters that you need to use to consume this API.')
     .setVersion('1.0')
-    .addTag('Routes')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
