@@ -124,7 +124,7 @@ The system currently presents an MVP of a scalable project for the maintenance a
 
 ## ⚙️ Infrastructure
 
-Foi utilizado uma estrutura de pastas seguindo Clean Architecture, que pode ser melhor entendido abaixo:
+A folder structure following Clean Architecture was used, which can be better understood below:
   
                          -----------------------------           ----------------------------
                         |        Presentation        |          |        Application         |
@@ -174,10 +174,6 @@ To start the project:
   yarn run start:dev
 ```
 
-## 📓 Project Informations
-
-The project was deployed on the Netlify platform and can be accessed here: [Coin Exchange](https://cryptoexchangedashboard.netlify.app)
-
 ## 🧑🏻‍🎨 Author
 
 - [Pedro Lucas Lopes Paraguai](https://www.github.com/PedroLucasLopes)
@@ -185,12 +181,8 @@ The project was deployed on the Netlify platform and can be accessed here: [Coin
 
 ## 🏷️ Tags
 
-![Javascript](https://img.shields.io/badge/-Javascript-grey?logo=javascript)
-![Typescript](https://img.shields.io/badge/Typescript-grey?logo=typescript)
-![Yarn](https://img.shields.io/badge/Yarn-grey?logo=yarn)
-![Git](https://img.shields.io/badge/Git-grey?logo=git)
-![Yarn](https://img.shields.io/badge/Github-grey?logo=github)
-![Netlify](https://img.shields.io/badge/Netlify-grey?logo=netlify)
-![Playwright](https://img.shields.io/badge/Playwright-grey?logo=playwright)
-![Jest](https://img.shields.io/badge/Jest-grey?logo=jest)
-![VueJS](https://img.shields.io/badge/VueJS-grey?logo=vuedotjs)
+![Typescript](https://img.shields.io/badge/-Typescript-blue?logo=typescript)
+![NestJS](https://img.shields.io/badge/-NestJS-red?logo=nestjs)
+![Jest](https://img.shields.io/badge/-Jest-orange?logo=jest)
+![Docker](https://img.shields.io/badge/-Docker-blue?logo=docker)
+![NodeJS](https://img.shields.io/badge/-NodeJS-green?logo=nodeJS)
