@@ -1,19 +1,19 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/infrastructure/prisma/prisma.service';
+import { PrismaService } from '../../infrastructure/prisma/prisma.service';
 import { CampaignBodyDTO } from '../DTO/campaign-body-dto';
 import {
   BadRequestError,
   NotFoundError,
   UnauthorizedError,
-} from 'src/presentation/responses/error.types';
-import missingFields from 'src/presentation/filters/missingFields.filter';
-import validateDateFormat from 'src/presentation/filters/validateDateFormat.filter';
-import convertToDate from 'src/presentation/filters/converttodate.filter';
-import checkDateValidation from 'src/presentation/filters/checkdatevalidation.filter';
-import checkCampaignEnd from 'src/presentation/filters/checkcampaignend.filter';
-import campaignStatus from 'src/presentation/filters/campaignstatus.filter';
+} from '../../presentation/responses/error.types';
+import missingFields from '../../presentation/filters/missingFields.filter';
+import validateDateFormat from '../../presentation/filters/validateDateFormat.filter';
+import convertToDate from '../../presentation/filters/converttodate.filter';
+import checkDateValidation from '../../presentation/filters/checkdatevalidation.filter';
+import checkCampaignEnd from '../../presentation/filters/checkcampaignend.filter';
+import campaignStatus from '../../presentation/filters/campaignstatus.filter';
 import { StatusType } from '@prisma/client';
-import statusTypeIsValid from 'src/presentation/filters/statusTypeIsValid.filter';
+import statusTypeIsValid from '../../presentation/filters/statusTypeIsValid.filter';
 
 @Injectable()
 export class CampaignService {

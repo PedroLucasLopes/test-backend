@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { CampaignController } from 'src/presentation/controllers/campaign.controller';
-import { CampaignService } from 'src/application/services/campaign.service';
-import { PrismaService } from 'src/infrastructure/prisma/prisma.service';
+import { CampaignController } from '../../presentation/controllers/campaign.controller';
+import { CampaignService } from '../../application/services/campaign.service';
+import { PrismaService } from '../../infrastructure/prisma/prisma.service';
 
 @Module({
   imports: [],

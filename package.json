@@ -1,5 +1,5 @@
 {
-  "name": "crm",
+  "name": "crud",
   "private": true,
   "version": "1.0.0",
   "description": "Developed by Pedro Lucas",
@@ -7,7 +7,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"../**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -33,9 +33,14 @@
     "express": "^4.21.0",
     "prisma": "^5.19.1",
     "reflect-metadata": "^0.2.2",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "@nestjs/testing": "^10.4.3",
+    "@types/jest": "^29.5.13",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
     "typescript": "^5.6.2"
   }
 }

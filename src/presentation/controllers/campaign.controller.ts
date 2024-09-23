@@ -14,7 +14,7 @@ import { Created, Ok } from '../responses/success.types';
 import { Public } from '../decorators/public.decorator';
 import { StatusType } from '@prisma/client';
 import { ApiTags, ApiOperation, ApiResponse, ApiBody, ApiParam, ApiQuery } from '@nestjs/swagger';
-import { CreateCampaignDto } from 'src/application/DTO/createcampaign-body.dto';
+import { CreateCampaignDto } from '../../application/DTO/createcampaign-body.dto';
 
 @ApiTags('Campaigns') // Define a tag para agrupar os endpoints relacionados a campanhas
 @Controller('campaign')

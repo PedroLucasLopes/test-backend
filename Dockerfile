@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR /usr/src/api
+WORKDIR /usr/../api
 
 COPY . .
 COPY ./prisma ./prisma
